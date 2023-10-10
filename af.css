@@ -23,25 +23,25 @@ td {
     border-bottom: 0px solid grey;
 }
 table {
-    width: 100%;
+    width: max-content;
 }
 th {
-    width: 20%;
-}
-td:first-child {
     width: 30%;
 }
+td:first-child {
+    width: 20%;
+}
 th, td {
-    padding: 10px 15px;
+    padding: 10px 6px;
 }
 caption {
     caption-side: bottom;
-    text-align: right;
+    text-align: left ;
     padding: 10px 0;
     font-size: 14px;
 }
 h1 {
-    text-align:center;
+    text-align:left ;
 }
 table {
     font-family: sans-serif;

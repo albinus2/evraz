@@ -1,0 +1,52 @@
+table {
+    border-collapse: collapse;
+    /*убираем пустые промежутки между ячейками*/
+    border: 0 solid grey;
+    /*устанавливаем для таблицы внешнюю границу серого цвета толщиной 1px*/
+    width: max-content;
+    float: left;
+    margin-right: 10px;
+    font-family: sans-serif;
+    z-index: auto;
+    border-top: 0 solid yellow;
+    position: relative;
+}
+#t1 {
+    right: 0 ;
+}
+#t2 {
+    left: 0 ;
+}
+#t3 {
+    z-index: 5;
+    top: 0;
+}
+#t4 {
+    bottom: 0 ;
+}
+th {
+    border-bottom: 1px solid grey;
+    width: 30%;
+}
+td {
+    border: 0px solid grey;
+    border-bottom: 0px solid grey;
+}
+
+td:first-child {
+    width: 20%;
+}
+
+th, td {
+    padding: 10px 6px;
+}
+
+caption {
+    caption-side: bottom;
+    text-align: left ;
+    padding: 10px 0;
+    font-size: 14px;
+}
+h1 {
+    text-align:left ;
+}
