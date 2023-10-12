@@ -9,20 +9,22 @@ table {
     font-family: sans-serif;
     z-index: auto;
     border-top: 0 solid yellow;
-    position: relative;
+    position: absolute;
 }
 #t1 {
-    right: 0 ;
+    bottom:0;
+
 }
 #t2 {
-    left: 0 ;
+    right: 0 ;
 }
 #t3 {
     z-index: 5;
     top: 0;
 }
 #t4 {
-    bottom: 0 ;
+    right : 0 ;
+    bottom : 0;
 }
 th {
     border-bottom: 1px solid grey;
