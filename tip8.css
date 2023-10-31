@@ -27,16 +27,19 @@ table {
     text-align: left;
     margin-bottom: auto;
 }
-tbody {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-}
 
-#t1 {
-    background-color: green;
+
+
+#t3 {
+    position: absolute;
+    right: 100%;
+}
+#t2{
+    position: absolute;
+    bottom: 100%;
 }
 #tr2{
+
     height: 30%;
 }
 th {
