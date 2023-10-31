@@ -4,17 +4,17 @@ div {
     float: left;
     position: relative;
 }
-#d1{
-    background-color: deepskyblue;
+#d1 tr{
+    background-color: rgba(44,77,75,0.4);
 }
-#d2{
-    background-color: darkgreen;
+#d2 tr{
+    background-color: rgba(100,98,0,0.17);
 }
-#d3{
-    background-color: darkcyan;
+#d3 tr{
+    background-color: rgba(166,62,62,0.7);
 }
-#d4{
-    background-color: darkred;
+#d4 tr{
+    background-color: #783586;
 }
 table {
     border-collapse: collapse;
@@ -29,17 +29,11 @@ table {
 }
 
 
-
-#t3 {
-    position: absolute;
-    right: 100%;
-}
-#t2{
-    position: absolute;
-    bottom: 100%;
-}
+#t1 {     position: absolute;     bottom: 0;     right:  0; }
+#t3 {     position: absolute;     right: 0;     bottom: 86.8%; }
+#t2{     position: absolute;     bottom: 0; }
+#t4 {     position: relative;     bottom: 12.7%; }
 #tr2{
-
     height: 30%;
 }
 th {

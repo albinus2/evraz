@@ -4,17 +4,17 @@ div {
     float: left;
     position: relative;
 }
-#d1{
-    background-color: deepskyblue;
+#d1 tr{
+    background-color: rgba(44,77,75,0.4);
 }
-#d2{
-    background-color: darkgreen;
+#d2 tr{
+    background-color: rgba(100,98,0,0.17);
 }
-#d3{
-    background-color: darkcyan;
+#d3 tr{
+    background-color: rgba(166,62,62,0.7);
 }
-#d4{
-    background-color: darkred;
+#d4 tr{
+    background-color: #783586;
 }
 table {
     border-collapse: collapse;
