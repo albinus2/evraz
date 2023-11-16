@@ -1,0 +1,142 @@
+html{
+    font-size: 20px;
+}
+body{
+    margin: 0;
+}
+.heads {
+    background-image: url(https://catherineasquithgallery.com/uploads/posts/2021-02/1613162787_81-p-zheltii-fon-minimalizm-108.jpg);
+    width: 100vw;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.heads_body{
+    height: 100%;
+    padding: 50px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    .top{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+}
+.heads .top .info{
+    display: flex;
+    flex-direction: row;
+}
+.heads .top .info .info_item{
+    margin-right: 10px;
+}
+.heads .middles{
+    text-align: center;
+}
+.heads .middles h1{
+    font-size: 3rem;
+}
+.heads .middles .h1{
+    font-size: 4em;
+}
+.heads .middles div:nth-child(2){
+    font-size: 2rem;
+}
+.heads .middles button {
+    font-size: 2rem;
+    background-color: transparent;
+    padding: 20px 30px;
+    border: 4px solid white;
+    border-radius: 10px;
+    color: red;
+    margin-top: 25px;
+}
+.heads2{
+    width: 100vw;
+    height: 100vh;
+}
+.heads_body2{
+    height:100%;
+    padding: 40px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.heads2 .tops{
+    margin: 30px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+.heads2 .tops .mini-tops{
+    text-align: center ;
+}
+.heads2 .middle2{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.heads2 .middle2 .info2{
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 25vw;
+    height: 75vh;
+}
+.heads2 .middle2 .info2 .info3{
+    background-image: url("https://www.film.ru/sites/default/files/filefield_paths/drive-ryan-goslin.jpg");
+    width: 25vw;
+    height: 50vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+.heads2 .middle2 .info2 .text3 {
+    font-size: 15px;
+    color: gray;
+    margin-bottom: 70px;
+
+}
+.picture{
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    background-repeat: no-repeat;
+    background-size: cover;
+    justify-content: space-between;
+    height: 100vh;
+    width: 100vw;
+}
+.picture .picture2{
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image:url("https://img1.teletype.in/files/07/d1/07d1ed26-f741-4058-aa9c-9e532ca5ce1b.jpeg");
+    width: 49.8vw;
+    height: 35vw;
+}
+.head3{
+    width: 100vw;
+    height: 75vh;
+}
+.head3 .head_body3{
+    height: 100%;
+    padding: 50px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+
+
+
+
+
+
+
+
+
+
