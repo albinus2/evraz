@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href = "aaaaaaaaaa.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="head">
+    <div class="add_item">
+        <div>напишите название предмета:
+            <input name="sis" >
+        </div>
+        <div class="see">
+            <label>
+                выберите категорию товара
+                <select id="kot" >
+                    <option value="1">
+                        -выберите КОТегорию-
+                    </option>
+                    <option>
+                        стройматериалы
+                    </option>
+                    <option>
+                        продукты
+                    </option>
+                    <option>
+                        одежда
+                    </option>
+                    <option>
+                        хозтовары
+                    </option>
+                    <option>
+                        павлик
+                    </option>
+                    <option>
+                        прочее
+                    </option>
+                </select>
+            </label>
+        </div>
+
+        <div>Состояние</div>
+
+        <div>
+            <input type="checkbox" id="dicsount1" name="conditions" value="БУ">
+            <label for="dicsount1">БУ</label>
+        </div>
+
+        <div>
+            <input type="checkbox" id="dicsount2" name="conditions" value="мягкое">
+            <label for="dicsount2">Мягкое</label>
+        </div>
+
+        <div>
+            <input type="checkbox" id="dicsount3" name="conditions" value="плоское">
+            <label for="dicsount3">Плоское</label>
+        </div>
+        <div class="description" >
+        </div>
+        <div>Есть скидка</div>
+        <div>
+            <input type="radio" id="discyes" name="discount" value="yes">
+            <label for="discyes">DA</label>
+        </div>
+        <div class="discount" id="52" style="display:none">
+            <input type="number" min="0" max="100" id="23" value="0">
+        </div>
+        <div>
+            <input type="radio" id="discno" name="discount" value="no" checked>
+            <label for="discno">NET</label>
+        </div>
+        <div>описание предмета </div>
+        <textarea class="text" id="description">
+        </textarea>
+        <div>
+            <input type="number" id="sell" name="sell">
+            <label for="sell">цена</label>
+        </div>
+        <div>
+            <button class="butt">
+                СОЗАТЬ ТОВАР
+
+            </button>
+            <button class="yourmother">a</button>
+            <button class="yourfatmother"></button>
+
+
+        </div>
+    </div>
+    <div id="dl">
+        <div>предметы</div>
+    </div>
+</div>
+<script>
+    const state = document.querySelectorAll('input[name=conditions]')
+    const buffton=document.getElementById('54')
+    const disk=document.getElementById('23')
+    const kot=document.getElementById('kot')
+    const description=document.getElementById('description')
+    const price=document.getElementById('sell')
+    let divList = document.getElementById('dl')
+    const title = document.querySelector('input[name=sis]')
+    let gh = document.getElementById("discno")
+    let biba = []
+    let yessir = document.getElementById("discyes")
+    let disco = document.getElementById("52")
+    let oudap = 0
+    yessir.addEventListener("change",function(event){
+        disco.style.display="block"
+        oudap = 1
+    })
+    gh.addEventListener("change",function(event){
+        disco.style.display="none"
+        oudap = 0
+    })
+
+    let itemsList = JSON.parse(localStorage.getItem('itemsList'));
+    itemsList = itemsList || [];
+
+    function generateDiv(tovObject) {
+        const index = itemsList.indexOf(tovObject)
+        tovObject.id = index + 1;
+        const newDiv = document.createElement('div')
+        newDiv.innerHTML = `
+                    <div>название айтема: ${tovObject.title}</div>
+                    <div>категория айтема: ${tovObject.kot}</div>
+                    <div>цена айтема: ${tovObject.price}</div>
+                    <div>скидка айтема: ${tovObject.disk}%  </div>
+                    <div>сост айтема: ${tovObject.biba}</div>
+                    <div>описание айтема: ${tovObject.description}</div>
+                    <button class="buff" id="button-${index + 1}" >удалить</button>
+`
+
+
+        divList.appendChild(newDiv)
+        const deleteButton = document.getElementById(`button-${index + 1}`)
+        deleteButton.addEventListener('click', function(event) {
+            const itemIndex = itemsList.findIndex(function(item) {
+                return item.id === index + 1
+            })
+            itemsList.splice(itemIndex, 1)
+            console.log(itemsList)
+            newDiv.remove()
+
+            localStorage.setItem("itemsList", JSON.stringify(itemsList));
+            // location.reload()
+        })
+    }
+
+    for (let tovObject of itemsList) {
+        generateDiv(tovObject);
+    }
+
+    const calc = document.querySelector('div.add_item');
+    if (buffton) {
+        // localStorage.removeItem('biba');
+        console.log("3333")
+    }
+    if (calc) {
+        calc.addEventListener('click', function (event) {
+            const target = event.target;
+            if (target.tagName === 'BUTTON') {
+                console.log(title)
+                if (title.value === '' || price.value === '' || kot.value === "1" || description.value === '' || (oudap === 1 && disk.value === '0')){
+                    alert("кыш отсюда")
+                    // window.open('https://www.youtube.com/watch?v=ywthKNqI7uI','_blank')
+                }
+                else{
+                if (target.classList.contains('butt')) {
+                    biba = []
+                    for (let i = 0; i < state.length; i++) {
+                        if (state[i].checked) {
+                            biba = biba + state[i].value + ' '
+                        } else {
+                            console.log('biba')
+                        }
+                    }
+
+                    const tovObject = {
+                        title: title.value,
+                        kot: kot.value,
+                        price: price.value,
+                        disk: disk.value,
+                        biba: biba,
+                        description: description.value,
+                    };
+                    itemsList.push(tovObject)
+                    localStorage.setItem("itemsList", JSON.stringify(itemsList));
+
+                    generateDiv(tovObject);
+                }}
+            }
+        })
+    }
+</script>
+</body>
+</html>

@@ -9,27 +9,154 @@
 <div class="head">
     <div class="add_item">
         <div>напишите название предмета:
-        <input class="name">
+        <input name="name">
         </div>
         <div class="see">
-            <select class="asad" >
-                <option>
-                    asda
+            <label>
+                выберите категорию товара
+                <select class="asad" name="fag">
 
-                </option>
-                <option>
-                    asdaasdasd
+                    <option>
+                         стройматериалы
+                    </option>
+                    <option>
+                        продукты
+                    </option>
+                    <option>
+                        одежда
+                    </option>
+                    <option>
+                        хозтовары
+                    </option>
+                    <option>
+                        павлик
+                    </option>
+                    <option>
+                        прочее
+                    </option>
+                </select>
+            </label>
+        </div>
 
-                </option>
-            </select>
+        <div>Состояние</div>
+
+        <div>
+            <input type="checkbox" id="1" name="conditions" value="БУ">
+            <label for="1">БУ</label>
+        </div>
+
+        <div>
+            <input type="checkbox" id="2" name="conditions" value="Мягкое">
+            <label for="2">Мягкое</label>
+        </div>
+
+        <div>
+            <input type="checkbox" id="3" name="conditions" value="Плоское">
+            <label for="3">Плоское</label>
+        </div>
+        <div class="description" >
+        </div>
+        <div>Есть скидка</div>
+        <div>
+            <input type="radio" id="discyes" name="discount" value="yes">
+            <label for="discyes">DA</label>
+        </div>
+        <div class="discount" id="52" style="display:none">
+            <input type="number" min="0" max="100" id="23">
+        </div>
+        <div>
+            <input type="radio" id="discno" name="discount" checked  value="no">
+            <label for="discno">NET</label>
+        </div>
+        <div>
+            цена
+            <input name="price">
 
         </div>
-        <input type="radio">
+        <div>описание предмета </div>
+        <textarea name="description">
+        </textarea>
+        <div>
+            <button class="butt">
+                СОЗАТЬ ТВОВАРАРВАРВАРВР
+
+            </button>
+
+
+        </div>
     </div>
-    <div class="check_item">
-    12
+    <div id="check_item">
+    все товары 5242
     </div>
 </div>
+<script>
+    const discount=document.getElementById('23')
+    const state = document.querySelectorAll('input[name=conditions]')
+    const category = document.querySelector('select[name=fag]')
+    const divList = document.getElementById('check_item')
+    const title = document.querySelector('input[name=name]')
+    const descrtip = document.querySelector('textarea[name=description]')
+    const newDiv =
+        ёdocument.createElement('div')
+    const prices = document.querySelector('input[name=price]')
+    const checkbox = document.getElementById('myCheckbox');
+    let statelist = []
+   // newDiv.innerHTML=`
+   //     <div>name of item: ${title.value} </div>
+   //       asd
+   // `
+   // divList.appendChild(newDiv)
 
+
+    const sell = document.querySelector("input.discount")
+    let disc=document.querySelectorAll("input[name=discount]")
+    let gh = document.getElementById("discno")
+    let yessir = document.getElementById("discyes")
+    let disco = document.getElementById("52")
+    yessir.addEventListener("change",function(event){
+        disco.style.display="block"
+    })
+    gh.addEventListener("change",function(event){
+        disco.style.display="none"
+    })
+
+    const calc = document.querySelector('div.add_item');
+            if(calc){
+                calc.addEventListener('click', function(event)
+                {        const target = event.target;
+                if (target.tagName === 'BUTTON') {
+
+                if (target.classList.contains('butt')){
+                    statelist=[]
+                    for (let i=0;i<state.length;i++){
+                        if (state[i].checked){
+                            statelist=statelist+state[i].value+" "
+                        }
+                    }
+                    newDiv.innerHTML=`
+                        <div>name of item: ${title.value}
+                        </div>
+                        <div>
+                            price:${prices.value}s
+                        </div>
+                        <div>
+                            description:${descrtip.value}
+                        </div>
+                        <div>
+                            category:${category.value}
+                        </div>
+                        <div>
+                        state:${statelist}
+                        </div>
+                        <div>
+                        disc:${discount.value}
+                        </div>
+                            `
+                    divList.appendChild (newDiv)
+                    }           }
+        })}
+
+
+</script>
 </body>
 </html>

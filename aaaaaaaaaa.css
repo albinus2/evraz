@@ -1,0 +1,21 @@
+.head{
+    display: flex;
+    flex-direction: row;
+}
+.add_item{
+    width: 50%;
+}
+.check_item{
+    display: flex;
+    flex-direction: column;
+}
+.buff{
+    width:100px ;
+    height: 50px;
+    background-color:rebeccapurple;
+}
+.yourmother{
+    width: 0.5px;
+    height: 0.5px;
+
+}
